@@ -1,22 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native'
 import CardFlip from 'react-native-card-flip'
 import { Metrics, Fonts, Images } from '../Styles'
 
-getImage = (img) => {
-  if (img == null) {
-    return Images.noImage
-  }
-  return {uri: img}
-}
-
 const Card = ({
   index, item
 }) => {
+  const [imageVisible, setImageVisible] = useState(true);
+
+  getImage = (img) => {
+    if (img == null) {
+      return Images.noImage
+    }
+    return {uri: img}
+  }
+
   return (
     <CardFlip style={styles.cardContainer} ref={ (card) => this['card' + index] = card } key={index}>
       <TouchableOpacity style={styles.card} onPress={() => this['card' + index].flip()} >
-        <Image source={this.getImage(item.img)} style={styles.img} />
+        <View>
+        {
+          imageVisible ?
+          <Image 
+            source={this.getImage(item.img)} 
+            style={styles.img} 
+            onError = { () => setImageVisible(false) }
+
+          /> : <Text style={{alignSelf: "center"}}>Image load error.</Text>
+        }
+        <Text style={[styles.text]}>xx {item.name}</Text>
+        </View>
       </TouchableOpacity>
       <TouchableOpacity style={[styles.card, styles.detailCard]} onPress={() => this['card' + index].flip()} >
         <Text style={[styles.text]}>ID: {item.cardId}</Text>

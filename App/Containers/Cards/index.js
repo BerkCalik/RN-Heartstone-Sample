@@ -31,6 +31,9 @@ export class Cards extends Component {
             data={cards}
             renderItem={this.renderItem}
             keyExtractor={(item, index) => "card-"+index}
+            ListEmptyComponent={
+              <Text style={[styles.alignSelfCenter]}>Not found available data.</Text>
+            }
           />
         }        
       </View>
