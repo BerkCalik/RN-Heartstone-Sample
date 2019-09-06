@@ -3,10 +3,10 @@ import { Metrics, ApplicationStyles, Fonts, Colors } from '../../../Styles'
 
 export default StyleSheet.create({
   ...ApplicationStyles.screen,
-  card1: {
-    backgroundColor: '#FE474C',
+  headerButton:{
+    paddingRight: 10
   },
-  card2: {
-    backgroundColor: '#FEB12C',
-  },
+  headerButtonText:{
+    color: "blue"
+  }
 })

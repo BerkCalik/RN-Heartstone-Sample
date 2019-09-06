@@ -49,7 +49,7 @@ const ApplicationStyles = {
       //fontSize: 14,
       color: Colors.text
     },
-    alignSelf:{alignSelf: 'center'},
+    alignSelfCenter:{alignSelf: 'center'},
     secondaryTextColor:{color: Colors.gray},
     mt10: {marginTop: 10},
     mt20: {marginTop: 20},

@@ -1,4 +1,7 @@
 export const GET_CARDS = "GET_CARDS"
+export const SEARCH_CARDS = "SEARCH_CARDS"
+export const SEARCH_QUERY_CHANGED = "SEARCH_QUERY_CHANGED"
+
 export const TYPE_SUFFIX_SUCCESS = "_FULFILLED"
 export const TYPE_SUFFIX_ERROR = "_REJECTED"
 export const TYPE_SUFFIX_PENDING = "_PENDING"
